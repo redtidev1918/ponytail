@@ -1,8 +1,10 @@
 name: publish
 
 on:
-  push:
-    tags: ['v*']
+  # Fork is intentionally unmanaged by ReleaseGraph: this publishes the
+  # upstream author's scoped package (@dietrichgebert/ponytail) via OIDC
+  # trust configured on DietrichGebert/ponytail, not here. No automatic
+  # tag trigger; only an explicit, deliberate workflow_dispatch can run it.
   workflow_dispatch:
 
 permissions:
